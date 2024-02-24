@@ -6,8 +6,11 @@ class DecisionGame
 
     static void Main(string[] args)
     {
-        // Run the game with the initial scenario and decisions
+        // Run multiple scenarios
         Scenario1();
+        Scenario2();
+
+        // Determine outcome after all scenarios are completed
         DetermineOutcome();
     }
 
