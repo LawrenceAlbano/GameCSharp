@@ -1,0 +1,62 @@
+using System;
+
+class DecisionGame
+{
+    static int points = 0;
+
+    static void Main(string[] args)
+    {
+        // Run the game with the initial scenario and decisions
+        Scenario1();
+        DetermineOutcome();
+    }
+
+    static void Scenario1()
+    {
+        Console.WriteLine("Scenario 1: You are walking in the forest and you see a wounded animal.");
+        Decision("What do you do?", "Approach the animal to help it.", "Ignore the animal and continue walking.", 1, -1);
+    }
+
+    static void Scenario2()
+    {
+        Console.WriteLine("Scenario 2: You find a lost child crying alone in the park.");
+        Decision("What do you do?", "Approach the child and comfort them.", "Ignore the child and walk away.", 1, -1);
+    }
+
+    static void Decision(string question, string option1, string option2, int pointsOption1, int pointsOption2)
+    {
+        Console.WriteLine(question);
+        Console.WriteLine("a) " + option1);
+        Console.WriteLine("b) " + option2);
+
+        string choice = Console.ReadLine();
+
+        if (choice == "a")
+        {
+            Console.WriteLine($"You chose: {option1}");
+            points += pointsOption1;
+        }
+        else if (choice == "b")
+        {
+            Console.WriteLine($"You chose: {option2}");
+            points += pointsOption2;
+        }
+        else
+        {
+            Console.WriteLine("Invalid choice. Please choose 'a' or 'b'.");
+            return;
+        }
+    }
+
+    static void DetermineOutcome()
+    {
+        if (points >= 1)
+        {
+            Console.WriteLine("Congratulations! You are a good boi!");
+        }
+        else
+        {
+            Console.WriteLine("You are a bad boi...");
+        }
+    }
+}
